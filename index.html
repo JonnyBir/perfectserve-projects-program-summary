@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PerfectServe Program &#183; Executive Summary &#183; 2026-09-11</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --green-fg:#16a34a; --green-bg:#f0fdf4; --red-fg:#dc2626; --red-bg:#fef2f2; --ink:#111827; --sub:#6b7280; --line:#e2e4ea; }
+body { background:#f4f5f7; color:var(--ink); font-family:'Segoe UI',system-ui,-apple-system,sans-serif; font-size:15px; line-height:1.55; padding:40px 24px; }
+.wrap { max-width:900px; margin:0 auto; }
+header { margin-bottom:28px; }
+h1 { font-size:1.6rem; font-weight:700; letter-spacing:-0.01em; }
+.subtitle { font-size:0.95rem; color:var(--sub); margin-top:6px; }
+.grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+@media (max-width:700px) { .grid { grid-template-columns:1fr; } }
+.card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px 24px; }
+.card.attention { border-color:#f3c6c6; }
+.status-row { display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+.dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+.dot-green { background:var(--green-fg); }
+.dot-red { background:var(--red-fg); }
+.status-label { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; }
+.status-label.green { color:var(--green-fg); }
+.status-label.red { color:var(--red-fg); }
+.proj-name { font-size:1.1rem; font-weight:700; margin-bottom:8px; }
+.proj-status { font-size:0.95rem; color:#374151; }
+.proj-context { font-size:0.87rem; color:var(--sub); margin-top:8px; }
+.milestone { display:flex; align-items:center; gap:6px; margin-top:14px; padding-top:12px; border-top:1px solid var(--line); font-size:0.82rem; }
+.milestone-label { color:var(--sub); }
+.milestone-value { color:var(--ink); font-weight:600; }
+.ask { margin-top:16px; background:var(--red-bg); border-radius:8px; padding:12px 14px; }
+.ask-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--red-fg); margin-bottom:4px; }
+.ask-text { font-size:0.9rem; color:#374151; }
+footer { margin-top:24px; padding-top:16px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; color:var(--sub); }
+.summary-chip { font-size:0.8rem; color:var(--sub); }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<h1>PerfectServe Program &#8212; Executive Summary</h1>
+<div class="subtitle">Status as of September 11, 2026</div>
+</header>
+
+<div class="grid">
+
+<div class="card">
+<div class="status-row"><span class="dot dot-green"></span><span class="status-label green">On track</span></div>
+<div class="proj-name">Atlanta move to AWS</div>
+<div class="proj-status">Progressing as planned. First major cutover expected late October.</div>
+<div class="proj-context">Teams are working through the list of applications to migrate one by one. A hold-up that was slowing that list down got cleared this week.</div>
+<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Wave 1 go-live &#8212; Oct 31</span></div>
+</div>
+
+<div class="card attention">
+<div class="status-row"><span class="dot dot-red"></span><span class="status-label red">Needs attention</span></div>
+<div class="proj-name">Canada platform build</div>
+<div class="proj-status">Today's target date will be missed. No new date set yet.</div>
+<div class="proj-context">Most of the underlying infrastructure is ready. What's left &#8212; getting customer-facing applications live &#8212; is stuck behind a handful of technical dependencies and slow internal access requests.</div>
+<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Platform complete &#8212; new date pending</span></div>
+<div class="ask">
+<div class="ask-label">Ask for leadership</div>
+<div class="ask-text">Speed up internal access approvals &#8212; they've now caused two missed deadlines. Also need sign-off on telling the client a new date is coming.</div>
+</div>
+</div>
+
+<div class="card">
+<div class="status-row"><span class="dot dot-green"></span><span class="status-label green">On track</span></div>
+<div class="proj-name">OC West expansion</div>
+<div class="proj-status">First region move completed successfully. Second region starting now.</div>
+<div class="proj-context">The riskiest part of this project &#8212; moving the database without losing data &#8212; is done. What's left is lower-risk setup work in the second region.</div>
+<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Second region build &#8212; Oct 14</span></div>
+</div>
+
+<div class="card attention">
+<div class="status-row"><span class="dot dot-red"></span><span class="status-label red">Needs attention</span></div>
+<div class="proj-name">Identity platform upgrade</div>
+<div class="proj-status">Last release had to be rolled back after a problem only showed up live.</div>
+<div class="proj-context">The rollback was clean &#8212; no customer data was affected. The issue only showed up in the live system because there's no realistic practice environment to catch it beforehand. The team is closing that gap before trying again.</div>
+<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Retry release &#8212; date TBD</span></div>
+<div class="ask">
+<div class="ask-label">Ask for leadership</div>
+<div class="ask-text">Approve budget for a proper test environment, so the next release is caught before it reaches customers.</div>
+</div>
+</div>
+
+</div>
+
+<footer>
+<span class="summary-chip">2 on track &#183; 2 need help</span>
+<span class="summary-chip">PerfectServe Executive Summary &#183; Sep 11, 2026</span>
+</footer>
+</div>
+</body>
+</html>

@@ -43,47 +43,38 @@ footer { margin-top:24px; padding-top:16px; border-top:1px solid var(--line); di
 <div class="subtitle">Status as of September 14, 2026</div>
 </header>
 <div class="grid">
-
 <div class="card">
 <div class="status-row"><span class="dot dot-green"></span><span class="status-label green">On track</span></div>
 <div class="proj-name">Atlanta move to AWS</div>
-<div class="proj-status">Migration work is progressing; final scheduling for the October moves is waiting on an internal review.</div>
-<div class="proj-context">The team has cleared several early hurdles &#8212; approvals, environment setup &#8212; and locked in a testing window for late September. Waves 1 and 2 are complete; Wave 3 is next up, with the deciding details on what moves waiting on engineering feedback.</div>
-<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Wave 3 &#8212; Oct 7</span></div>
+<div class="proj-status">Migration to AWS is on track; team is finalizing which applications move in the next two waves.</div>
+<div class="proj-context">A key approval that had stalled things finally cleared. The team is now locking down the app list for the October and November moves before testing starts later this month.</div>
+<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Wave 1 go-live &#8212; Oct 31</span></div>
 </div>
-
 <div class="card attention">
 <div class="status-row"><span class="dot dot-red"></span><span class="status-label red">Needs attention</span></div>
 <div class="proj-name">Canada platform build</div>
-<div class="proj-status">A detailed recovery plan is now in place, targeting full production readiness by October 9.</div>
-<div class="proj-context">The team identified exactly what&#8217;s blocking progress and mapped out the path forward: about a week to clear the last technical blockers and get the environment usable, then two to three more weeks of integration work, testing, and final hardening before handing it fully to production.</div>
-<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Customer production-ready &amp; full handoff &#8212; Oct 9</span></div>
+<div class="proj-status">Platform build is behind schedule; a mid-September target was missed and a new date isn&#8217;t set yet.</div>
+<div class="proj-context">Most of the underlying infrastructure is done, but connecting the applications is stuck on a handful of technical dependencies and account setup issues, mainly driven by slow internal approvals.</div>
+<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Internal readiness handover &#8212; date TBD</span></div>
 <div class="ask">
 <div class="ask-label">Ask for leadership</div>
-<div class="ask-text">Support communicating this revised October 9 target and plan to the client, since it moves the date from the original commitment.</div>
+<div class="ask-text">Help set and communicate a firm revised completion date to the client, and consider building longer approval buffers into future project timelines.</div>
 </div>
 </div>
-
 <div class="card">
 <div class="status-row"><span class="dot dot-green"></span><span class="status-label green">On track</span></div>
 <div class="proj-name">OC West expansion</div>
-<div class="proj-status">The East-region database upgrade succeeded with zero data lost; the team is now preparing the larger West-region phase.</div>
-<div class="proj-context">The East cutover ran a bit longer than the window we communicated to clients, which caused some frustration &#8212; that lesson is feeding into West-region planning. Next up: build the West-region database, merge East and West into one resilient setup, then deploy the applications with no downtime. Who owns testing for the West side is still being finalized, and the old East database will stay on standby briefly before being formally retired.</div>
+<div class="proj-status">First phase of the database upgrade succeeded; team is now preparing the second, West-region phase.</div>
+<div class="proj-context">A data alert during the cutover turned out to be a false alarm with nothing lost, though the outage ran a bit longer than promised &#8212; a lesson for next time.</div>
 <div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Production build &amp; deployment &#8212; Oct 14</span></div>
 </div>
-
 <div class="card attention">
 <div class="status-row"><span class="dot dot-red"></span><span class="status-label red">Needs attention</span></div>
 <div class="proj-name">Identity platform upgrade</div>
-<div class="proj-status">A recent software update caused a login problem for users and had to be rolled back.</div>
-<div class="proj-context">The rollback was quick and contained, but the team lacks a proper way to test changes like this before they go live, which is why the issue wasn&#8217;t caught sooner. A formal review is scheduled for next week.</div>
-<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Lightning Bolt release &#8212; Nov 30 (tentative)</span></div>
-<div class="ask">
-<div class="ask-label">Ask for leadership</div>
-<div class="ask-text">Approve investment in a proper pre-release testing environment so future updates can be validated before reaching customers, to help prevent repeat incidents like this one.</div>
+<div class="proj-status">A software release was rolled back after an issue affecting sign-ins surfaced in production; a review is underway.</div>
+<div class="proj-context">The team caught the problem the same day and reverted it before it caused lasting harm. A formal review is scheduled next week to identify what was missed.</div>
+<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Lightning Bolt release &#8212; Nov 30 (date TBD)</span></div>
 </div>
-</div>
-
 </div>
 <footer>
 <span class="summary-chip">2 on track &#183; 2 need help</span>

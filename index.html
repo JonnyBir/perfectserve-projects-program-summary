@@ -6,33 +6,41 @@
 <title>PerfectServe Program &#183; Executive Summary &#183; 2026-09-17</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-:root { --green-fg:#16a34a; --green-bg:#f0fdf4; --red-fg:#dc2626; --red-bg:#fef2f2; --ink:#111827; --sub:#6b7280; --line:#e2e4ea; }
+:root { --green-fg:#16a34a; --green-bg:#f0fdf4; --red-fg:#dc2626; --red-bg:#fef2f2; --amber-fg:#b45309; --amber-bg:#fef9f0; --ink:#111827; --sub:#6b7280; --line:#e2e4ea; }
 body { background:#f4f5f7; color:var(--ink); font-family:'Segoe UI',system-ui,-apple-system,sans-serif; font-size:15px; line-height:1.55; padding:40px 24px; }
 .wrap { max-width:900px; margin:0 auto; }
 header { margin-bottom:28px; }
 h1 { font-size:1.6rem; font-weight:700; letter-spacing:-0.01em; }
 .subtitle { font-size:0.95rem; color:var(--sub); margin-top:6px; }
-.grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
-@media (max-width:700px) { .grid { grid-template-columns:1fr; } }
-.card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:22px 24px; }
-.card.attention { border-color:#f3c6c6; }
-.status-row { display:flex; align-items:center; gap:8px; margin-bottom:12px; }
+.proj-section { background:#fff; border:1px solid var(--line); border-radius:12px; padding:24px 28px; margin-bottom:20px; }
+.proj-section.attention { border-color:#f3c6c6; }
+.status-row { display:flex; align-items:center; gap:8px; margin-bottom:4px; }
 .dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
 .dot-green { background:var(--green-fg); }
 .dot-red { background:var(--red-fg); }
 .status-label { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; }
 .status-label.green { color:var(--green-fg); }
 .status-label.red { color:var(--red-fg); }
-.proj-name { font-size:1.1rem; font-weight:700; margin-bottom:8px; }
-.proj-status { font-size:0.95rem; color:#374151; }
-.proj-context { font-size:0.87rem; color:var(--sub); margin-top:8px; }
-.milestone { display:flex; align-items:center; gap:6px; margin-top:14px; padding-top:12px; border-top:1px solid var(--line); font-size:0.82rem; }
-.milestone-label { color:var(--sub); }
-.milestone-value { color:var(--ink); font-weight:600; }
-.ask { margin-top:16px; background:var(--red-bg); border-radius:8px; padding:12px 14px; }
+.proj-name { font-size:1.25rem; font-weight:700; margin:4px 0 14px; }
+.ms-table { width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom:16px; }
+.ms-table th { text-align:left; font-size:0.66rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sub); padding:0 10px 6px 0; border-bottom:1px solid var(--line); }
+.ms-table td { padding:9px 10px 9px 0; border-bottom:1px solid #f1f3f7; vertical-align:top; }
+.ms-target { font-weight:700; white-space:nowrap; color:#374151; }
+.ms-status { white-space:nowrap; font-weight:600; }
+.ms-status.complete { color:var(--green-fg); }
+.ms-status.progress { color:var(--amber-fg); }
+.ms-status.target { color:var(--sub); }
+.current-position { font-size:0.9rem; color:#374151; margin-bottom:10px; }
+.current-position strong { color:var(--ink); }
+.key-sequence { font-size:0.82rem; color:var(--sub); font-style:italic; margin-bottom:16px; }
+.blockers { background:var(--amber-bg); border-radius:8px; padding:12px 14px; margin-bottom:12px; }
+.blockers-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--amber-fg); margin-bottom:6px; }
+.blockers ul { margin:0; padding-left:18px; }
+.blockers li { font-size:0.85rem; color:#374151; margin-bottom:4px; }
+.ask { background:var(--red-bg); border-radius:8px; padding:12px 14px; }
 .ask-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--red-fg); margin-bottom:4px; }
 .ask-text { font-size:0.9rem; color:#374151; }
-footer { margin-top:24px; padding-top:16px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; color:var(--sub); }
+footer { margin-top:8px; padding-top:16px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; color:var(--sub); }
 .summary-chip { font-size:0.8rem; color:var(--sub); }
 </style>
 </head>
@@ -42,55 +50,107 @@ footer { margin-top:24px; padding-top:16px; border-top:1px solid var(--line); di
 <h1>PerfectServe Program &#8212; Executive Summary</h1>
 <div class="subtitle">Status as of September 17, 2026</div>
 </header>
-<div class="grid">
 
-<div class="card">
+<div class="proj-section">
 <div class="status-row"><span class="dot dot-green"></span><span class="status-label green">On track</span></div>
 <div class="proj-name">Atlanta move to AWS</div>
-<div class="proj-status">Migration work is progressing; final scheduling for the October moves is waiting on an internal review.</div>
-<div class="proj-context">The team has cleared several early hurdles &#8212; approvals, environment setup &#8212; and locked in a testing window for late September. Waves 1 and 2 are complete; Wave 3 is next up, with the deciding details on what moves waiting on engineering feedback.</div>
-<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Wave 3 &#8212; Oct 7</span></div>
+<table class="ms-table">
+<thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td class="ms-target">Complete</td><td>Wave 1 migration</td><td class="ms-status complete">&#x2705; Complete</td></tr>
+<tr><td class="ms-target">Complete</td><td>Wave 2 migration</td><td class="ms-status complete">&#x2705; Complete</td></tr>
+<tr><td class="ms-target">Sept 23&#8211;25</td><td>QA re-validation for Wave 3 applications</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Oct 7</td><td>Wave 3 migration / go-live</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+</tbody>
+</table>
+<div class="current-position"><strong>Current position:</strong> Waves 1 and 2 are complete. The team is finalizing exactly which applications move in the Oct 7 Wave 3 release, with QA re-validation locked for Sept 23&#8211;25.</div>
+<div class="key-sequence"><strong>Key sequence:</strong> Wave 1 (done) &#8594; Wave 2 (done) &#8594; engineering review &#8594; QA validation (Sept 23&#8211;25) &#8594; Wave 3 go-live (Oct 7)</div>
+<div class="blockers">
+<div class="blockers-label">Blockers</div>
+<ul><li>Finalizing the Wave 3 application list is waiting on engineering feedback &#8212; being escalated directly rather than sitting in a queue.</li></ul>
+</div>
 </div>
 
-<div class="card attention">
+<div class="proj-section attention">
 <div class="status-row"><span class="dot dot-red"></span><span class="status-label red">Needs attention</span></div>
 <div class="proj-name">Canada platform build</div>
-<div class="proj-status">A detailed recovery plan is now in place, targeting full production readiness by October 9.</div>
-<div class="proj-context">The team identified exactly what&#8217;s blocking progress and mapped out the path forward: about a week to clear the last technical blockers and get the environment usable, then two to three more weeks of integration work, testing, and final hardening before handing it fully to production.</div>
-<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Customer production-ready &amp; full handoff &#8212; Oct 9</span></div>
+<table class="ms-table">
+<thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td class="ms-target">Sept 14&#8211;18</td><td>Clear Phase 1 blockers + deploy core application services</td><td class="ms-status progress">&#x1F7E1; In Progress</td></tr>
+<tr><td class="ms-target">Sept 21</td><td>Environment available for Implementation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Sept 21&#8211;Oct 2</td><td>Complete remaining integrations + supporting services</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Oct 2&#8211;6</td><td>End-to-end integration testing + remediation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Oct 5&#8211;9</td><td>Production validation + final readiness checks</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Oct 9</td><td>Customer production-ready / full handoff</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+</tbody>
+</table>
+<div class="current-position"><strong>Current position:</strong> Core platform infrastructure is largely complete. The critical path now shifts to clearing the remaining Phase 1 blockers and deploying the core application services needed to make the environment usable for Implementation on Sept 21.</div>
+<div class="key-sequence"><strong>Key sequence:</strong> Core platform (done) &#8594; Phase 1 blockers &#8594; core app services &#8594; Sept 21 Implementation start &#8594; integrations &#8594; E2E testing &#8594; production validation &#8594; Oct 9 full handoff</div>
+<div class="blockers">
+<div class="blockers-label">Blockers</div>
+<ul>
+<li>One application service still needs cloud storage and search-indexing access configured before it can go live.</li>
+<li>A second application service needs its database connection pooling and messaging access finished.</li>
+</ul>
+</div>
 <div class="ask">
 <div class="ask-label">Ask for leadership</div>
 <div class="ask-text">Support communicating this revised October 9 target and plan to the client, since it moves the date from the original commitment.</div>
 </div>
 </div>
 
-<div class="card attention">
-<div class="status-row"><span class="dot dot-red"></span><span class="status-label red">Needs attention</span></div>
+<div class="proj-section">
+<div class="status-row"><span class="dot dot-green"></span><span class="status-label green">On track</span></div>
 <div class="proj-name">OC West expansion</div>
-<div class="proj-status">A detailed plan now targets full handoff by October 9 &#8212; the same date as the Canada project &#8212; but it depends on a technical approval that needs to close today.</div>
-<div class="proj-context">The East-region database upgrade already succeeded with zero data lost. The team has now mapped the remaining steps &#8212; build the West database, stand up the applications, integrate and test everything, then hand off &#8212; on a tight but workable schedule. The team believes it&#8217;s achievable but flagged it for review rather than treating it as locked, since any slip in an early step pushes the whole date out.</div>
-<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Full project handoff &#8212; Oct 9 &nbsp;(via West database Sept 18 &#8594; build Sept 25 &#8594; integration Oct 2 &#8594; testing Oct 6 &#8594; signoff Oct 7)</span></div>
-<div class="ask">
-<div class="ask-label">Ask for leadership</div>
-<div class="ask-text">Help push through the pending change-approval needed today (Sept 17) so the West database work can start on schedule, and weigh in on whether this compressed timeline is realistic before we commit it to the client.</div>
+<table class="ms-table">
+<thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td class="ms-target">Sept 16</td><td>West database region attached</td><td class="ms-status complete">&#x2705; Complete</td></tr>
+<tr><td class="ms-target">Sept 17</td><td>Old database stopped / rollback window begins</td><td class="ms-status complete">&#x2705; Complete &#8212; 10 AM ET</td></tr>
+<tr><td class="ms-target">Sept 18&#8211;25</td><td>Complete West application stack</td><td class="ms-status progress">&#x1F7E1; Next major workstream</td></tr>
+<tr><td class="ms-target">Sept 25</td><td>West stack technically complete</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Sept 26&#8211;Oct 2</td><td>Application integration + database connectivity validation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Oct 2&#8211;6</td><td>End-to-end testing, performance &amp; remediation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Oct 6&#8211;7</td><td>Final readiness / operational validation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Oct 8</td><td>Final smoke test + handoff preparation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Oct 9</td><td>Full project handoff</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+</tbody>
+</table>
+<div class="current-position"><strong>Current position:</strong> The West database attach and old-database stop both completed on schedule with no impact to production. The critical path now shifts to completing and validating the West application stack.</div>
+<div class="key-sequence"><strong>Key sequence:</strong> Database region attach (done) &#8594; old database stop (done) &#8594; West app stack &#8594; integration &#8594; validation &#8594; remediation &#8594; final readiness &#8594; Oct 9 handoff</div>
+<div class="blockers">
+<div class="blockers-label">Blockers</div>
+<ul><li>No material blockers right now &#8212; the schedule to Oct 9 is tight, so any slip in an upcoming step would require rebasing the remaining dates.</li></ul>
 </div>
 </div>
 
-<div class="card attention">
+<div class="proj-section attention">
 <div class="status-row"><span class="dot dot-red"></span><span class="status-label red">Needs attention</span></div>
 <div class="proj-name">Identity platform upgrade</div>
-<div class="proj-status">A recent software update caused a login problem for users and had to be rolled back.</div>
-<div class="proj-context">The rollback was quick and contained, but the team lacks a proper way to test changes like this before they go live, which is why the issue wasn&#8217;t caught sooner. A formal review is scheduled for next week.</div>
-<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Lightning Bolt release &#8212; Nov 30 (tentative)</span></div>
+<table class="ms-table">
+<thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead>
+<tbody>
+<tr><td class="ms-target">Sept 9</td><td>Production release &amp; rollback</td><td class="ms-status complete">&#x2705; Complete (rolled back)</td></tr>
+<tr><td class="ms-target">Week of Sept 17</td><td>Internal root-cause review</td><td class="ms-status progress">&#x1F7E1; In Progress</td></tr>
+<tr><td class="ms-target">TBD</td><td>Retest &amp; new release date</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Nov 30 (tentative)</td><td>Lightning Bolt production release</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+</tbody>
+</table>
+<div class="current-position"><strong>Current position:</strong> A software update was rolled back after a login problem reached production. The team is completing a root-cause review before scheduling a retest; the separate November release remains unaffected.</div>
+<div class="key-sequence"><strong>Key sequence:</strong> Release &amp; rollback (done) &#8594; root-cause review &#8594; retest &amp; new date &#8594; Lightning Bolt release (Nov 30, tentative)</div>
+<div class="blockers">
+<div class="blockers-label">Blockers</div>
+<ul><li>There&#8217;s no lower-environment sandbox that fully mirrors production, which is why this issue wasn&#8217;t caught before release &#8212; the review will confirm the retest plan.</li></ul>
+</div>
 <div class="ask">
 <div class="ask-label">Ask for leadership</div>
 <div class="ask-text">Approve investment in a proper pre-release testing environment so future updates can be validated before reaching customers, to help prevent repeat incidents like this one.</div>
 </div>
 </div>
 
-</div>
 <footer>
-<span class="summary-chip">1 on track &#183; 3 need help</span>
+<span class="summary-chip">2 on track &#183; 2 need help</span>
 <span class="summary-chip">PerfectServe Executive Summary &#183; Sep 17, 2026</span>
 </footer>
 </div>

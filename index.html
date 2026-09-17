@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PerfectServe Program &#183; Executive Summary &#183; 2026-09-16</title>
+<title>PerfectServe Program &#183; Executive Summary &#183; 2026-09-17</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root { --green-fg:#16a34a; --green-bg:#f0fdf4; --red-fg:#dc2626; --red-bg:#fef2f2; --ink:#111827; --sub:#6b7280; --line:#e2e4ea; }
@@ -40,41 +40,58 @@ footer { margin-top:24px; padding-top:16px; border-top:1px solid var(--line); di
 <div class="wrap">
 <header>
 <h1>PerfectServe Program &#8212; Executive Summary</h1>
-<div class="subtitle">Status as of September 16, 2026</div>
+<div class="subtitle">Status as of September 17, 2026</div>
 </header>
 <div class="grid">
+
 <div class="card">
 <div class="status-row"><span class="dot dot-green"></span><span class="status-label green">On track</span></div>
 <div class="proj-name">Atlanta move to AWS</div>
-<div class="proj-status">Finalizing which applications move in the next two migration waves.</div>
-<div class="proj-context">Backend database redundancy and pre-migration monitoring are progressing on schedule. The application list for the upcoming go-live waves is being locked this week.</div>
-<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Go-live &#8212; Oct 31</span></div>
+<div class="proj-status">Migration work is progressing; final scheduling for the October moves is waiting on an internal review.</div>
+<div class="proj-context">The team has cleared several early hurdles &#8212; approvals, environment setup &#8212; and locked in a testing window for late September. Waves 1 and 2 are complete; Wave 3 is next up, with the deciding details on what moves waiting on engineering feedback.</div>
+<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Wave 3 &#8212; Oct 7</span></div>
 </div>
-<div class="card">
-<div class="status-row"><span class="dot dot-green"></span><span class="status-label green">On track</span></div>
+
+<div class="card attention">
+<div class="status-row"><span class="dot dot-red"></span><span class="status-label red">Needs attention</span></div>
 <div class="proj-name">Canada platform build</div>
-<div class="proj-status">Team has committed to a firm delivery date for the new regional platform.</div>
-<div class="proj-context">A few technical setup tasks are still being finished, but the team's new commitment restores confidence in hitting the delivery date.</div>
-<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Platform complete &#8212; Oct 9</span></div>
+<div class="proj-status">A detailed recovery plan is now in place, targeting full production readiness by October 9.</div>
+<div class="proj-context">The team identified exactly what&#8217;s blocking progress and mapped out the path forward: about a week to clear the last technical blockers and get the environment usable, then two to three more weeks of integration work, testing, and final hardening before handing it fully to production.</div>
+<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Customer production-ready &amp; full handoff &#8212; Oct 9</span></div>
+<div class="ask">
+<div class="ask-label">Ask for leadership</div>
+<div class="ask-text">Support communicating this revised October 9 target and plan to the client, since it moves the date from the original commitment.</div>
 </div>
-<div class="card">
-<div class="status-row"><span class="dot dot-green"></span><span class="status-label green">On track</span></div>
+</div>
+
+<div class="card attention">
+<div class="status-row"><span class="dot dot-red"></span><span class="status-label red">Needs attention</span></div>
 <div class="proj-name">OC West expansion</div>
-<div class="proj-status">A major database migration succeeded; the team is now building out the new region.</div>
-<div class="proj-context">The riskiest technical step is behind them. Work is now focused on completing the buildout ahead of final deployment.</div>
-<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Build complete &#8212; Oct 14</span></div>
+<div class="proj-status">A detailed plan now targets full handoff by October 9 &#8212; the same date as the Canada project &#8212; but it depends on a technical approval that needs to close today.</div>
+<div class="proj-context">The East-region database upgrade already succeeded with zero data lost. The team has now mapped the remaining steps &#8212; build the West database, stand up the applications, integrate and test everything, then hand off &#8212; on a tight but workable schedule. The team believes it&#8217;s achievable but flagged it for review rather than treating it as locked, since any slip in an early step pushes the whole date out.</div>
+<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Full project handoff &#8212; Oct 9 &nbsp;(via West database Sept 18 &#8594; build Sept 25 &#8594; integration Oct 2 &#8594; testing Oct 6 &#8594; signoff Oct 7)</span></div>
+<div class="ask">
+<div class="ask-label">Ask for leadership</div>
+<div class="ask-text">Help push through the pending change-approval needed today (Sept 17) so the West database work can start on schedule, and weigh in on whether this compressed timeline is realistic before we commit it to the client.</div>
 </div>
+</div>
+
 <div class="card attention">
 <div class="status-row"><span class="dot dot-red"></span><span class="status-label red">Needs attention</span></div>
 <div class="proj-name">Identity platform upgrade</div>
-<div class="proj-status">A recent software release was pulled back after an issue was found.</div>
-<div class="proj-context">An early-September release was rolled back the same day after an authentication problem surfaced. A root-cause review is underway this week, and the team is tightening testing to prevent a repeat.</div>
-<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Release &#8212; Nov 30</span></div>
+<div class="proj-status">A recent software update caused a login problem for users and had to be rolled back.</div>
+<div class="proj-context">The rollback was quick and contained, but the team lacks a proper way to test changes like this before they go live, which is why the issue wasn&#8217;t caught sooner. A formal review is scheduled for next week.</div>
+<div class="milestone"><span class="milestone-label">Next milestone:</span><span class="milestone-value">Lightning Bolt release &#8212; Nov 30 (tentative)</span></div>
+<div class="ask">
+<div class="ask-label">Ask for leadership</div>
+<div class="ask-text">Approve investment in a proper pre-release testing environment so future updates can be validated before reaching customers, to help prevent repeat incidents like this one.</div>
 </div>
+</div>
+
 </div>
 <footer>
-<span class="summary-chip">3 on track &#183; 1 need help</span>
-<span class="summary-chip">PerfectServe Executive Summary &#183; Sep 16, 2026</span>
+<span class="summary-chip">1 on track &#183; 3 need help</span>
+<span class="summary-chip">PerfectServe Executive Summary &#183; Sep 17, 2026</span>
 </footer>
 </div>
 </body>

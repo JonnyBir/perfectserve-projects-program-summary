@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PerfectServe Program &#183; Executive Summary &#183; 2026-09-17</title>
+<title>PerfectServe Program &#183; Executive Summary &#183; 2026-09-18</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root { --green-fg:#16a34a; --green-bg:#f0fdf4; --red-fg:#dc2626; --red-bg:#fef2f2; --amber-fg:#b45309; --amber-bg:#fef9f0; --ink:#111827; --sub:#6b7280; --line:#e2e4ea; }
@@ -48,7 +48,7 @@ footer { margin-top:8px; padding-top:16px; border-top:1px solid var(--line); dis
 <div class="wrap">
 <header>
 <h1>PerfectServe Program &#8212; Executive Summary</h1>
-<div class="subtitle">Status as of September 17, 2026</div>
+<div class="subtitle">Status as of September 18, 2026</div>
 </header>
 
 <div class="proj-section">
@@ -60,16 +60,21 @@ footer { margin-top:8px; padding-top:16px; border-top:1px solid var(--line); dis
 <tr><td class="ms-target">Complete</td><td>Wave 1 migration (applications)</td><td class="ms-status complete">&#x2705; Complete</td></tr>
 <tr><td class="ms-target">Complete</td><td>Wave 2 migration (applications)</td><td class="ms-status complete">&#x2705; Complete</td></tr>
 <tr><td class="ms-target">Sept 23&#8211;25</td><td>QA re-validation for Wave 3 applications</td><td class="ms-status progress">&#x1F7E1; In Progress</td></tr>
-<tr><td class="ms-target">Oct 7</td><td>Wave 3 migration &#8212; applications (list agreed)</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
-<tr><td class="ms-target">Nov 4</td><td>Wave 4 migration &#8212; applications (list agreed)</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Sept 30</td><td>Final production migration list locked</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Oct 7</td><td>Wave 3 migration &#8212; applications</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Nov 4</td><td>Wave 4 migration &#8212; applications</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
 <tr><td class="ms-target">Dec 2</td><td>Wave 5 migration &#8212; databases</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
 </tbody>
 </table>
-<div class="current-position"><strong>Current position:</strong> Waves 1 and 2 are complete. Application lists for both Wave 3 (Oct 7) and Wave 4 (Nov 4) are now agreed, with QA re-validation for Wave 3 underway Sept 23&#8211;25. A new Wave 5 (Dec 2) will handle the remaining database migrations.</div>
-<div class="key-sequence"><strong>Key sequence:</strong> Wave 1 (done) &#8594; Wave 2 (done) &#8594; QA validation (Sept 23&#8211;25) &#8594; Wave 3 go-live (Oct 7, apps) &#8594; Wave 4 go-live (Nov 4, apps) &#8594; Wave 5 go-live (Dec 2, databases)</div>
+<div class="current-position"><strong>Current position:</strong> Waves 1 and 2 are complete, and application lists for Wave 3 (Oct 7) and Wave 4 (Nov 4) are locked in. The team is actively working blockers to protect the Oct 7 date: a production bug fix, redundant Active Directory controllers ahead of the Sept 23 QA window, and a QA-first validation of a newly identified performance risk before the production list locks on Sept 30.</div>
+<div class="key-sequence"><strong>Key sequence:</strong> Wave 1 (done) &#8594; Wave 2 (done) &#8594; QA validation (Sept 23&#8211;25) &#8594; production list lock (Sept 30) &#8594; Wave 3 go-live (Oct 7) &#8594; Wave 4 go-live (Nov 4) &#8594; Wave 5 go-live (Dec 2, databases).</div>
 <div class="blockers">
 <div class="blockers-label">Blockers</div>
-<ul><li>No material blockers currently &#8212; Wave 3 and Wave 4 application lists are locked in; Wave 5 database scope is still being detailed.</li></ul>
+<ul>
+<li>A production EC2 bug fix (redeploying resources in the correct availability zone) is blocked pending approval for a resource tear-down; the team has requested an emergency change-review and is awaiting a response.</li>
+<li>A newly identified performance risk (added database-call latency on two core services) is being validated through testing ahead of the Sept 30 production-list lock &#8212; a worse-than-expected result could still change the final app list.</li>
+<li>One team member&#8217;s workspace-access status from an earlier blocker is unconfirmed and needs a definitive all-clear before Oct 7.</li>
+</ul>
 </div>
 </div>
 
@@ -79,6 +84,7 @@ footer { margin-top:8px; padding-top:16px; border-top:1px solid var(--line); dis
 <table class="ms-table">
 <thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead>
 <tbody>
+<tr><td class="ms-target">Complete</td><td>Core platform infrastructure</td><td class="ms-status complete">&#x2705; Complete</td></tr>
 <tr><td class="ms-target">Sept 14&#8211;18</td><td>Clear Phase 1 blockers + deploy core application services</td><td class="ms-status progress">&#x1F7E1; In Progress</td></tr>
 <tr><td class="ms-target">Sept 21</td><td>Environment available for Implementation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
 <tr><td class="ms-target">Sept 21&#8211;Oct 2</td><td>Complete remaining integrations + supporting services</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
@@ -87,18 +93,19 @@ footer { margin-top:8px; padding-top:16px; border-top:1px solid var(--line); dis
 <tr><td class="ms-target">Oct 9</td><td>Customer production-ready / full handoff</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
 </tbody>
 </table>
-<div class="current-position"><strong>Current position:</strong> Core platform infrastructure is largely complete. The critical path now shifts to clearing the remaining Phase 1 blockers and deploying the core application services needed to make the environment usable for Implementation on Sept 21.</div>
-<div class="key-sequence"><strong>Key sequence:</strong> Core platform (done) &#8594; Phase 1 blockers &#8594; core app services &#8594; Sept 21 Implementation start &#8594; integrations &#8594; E2E testing &#8594; production validation &#8594; Oct 9 full handoff</div>
+<div class="current-position"><strong>Current position:</strong> Core platform infrastructure is complete, and search-indexing deployment is nearing completion pending final approval. The remaining work centers on the services-team handoff, which is documented and otherwise ready but is currently blocked on two open items: a login-integration approval and a storage-configuration sign-off.</div>
+<div class="key-sequence"><strong>Key sequence:</strong> Core platform (done) &#8594; search-indexing + connection-pooling completion &#8594; login integration + storage workaround sign-off &#8594; services-team handoff &#8594; Oct 9 full handoff.</div>
 <div class="blockers">
 <div class="blockers-label">Blockers</div>
 <ul>
-<li>One application service still needs cloud storage and search-indexing access configured before it can go live.</li>
-<li>A second application service needs its database connection pooling and messaging access finished.</li>
+<li>Services-team handoff is blocked on approval of a login-integration change (needed for admin access) from two client-side approvers.</li>
+<li>A storage-configuration workaround still needs security sign-off before the handoff can proceed; a full permanent fix would take too long to land in time.</li>
+<li>Search-indexing deployment is pending one final validation step before the client&#8217;s application deployment can proceed.</li>
 </ul>
 </div>
 <div class="ask">
 <div class="ask-label">Ask for leadership</div>
-<div class="ask-text">Support communicating this revised October 9 target and plan to the client, since it moves the date from the original commitment.</div>
+<div class="ask-text">Support communicating the revised October 9 target to the client, since it moves the date from the original Sept 21 commitment.</div>
 </div>
 </div>
 
@@ -109,21 +116,23 @@ footer { margin-top:8px; padding-top:16px; border-top:1px solid var(--line); dis
 <thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead>
 <tbody>
 <tr><td class="ms-target">Sept 16</td><td>West database region attached</td><td class="ms-status complete">&#x2705; Complete</td></tr>
-<tr><td class="ms-target">Sept 17</td><td>Old database stopped / rollback window begins</td><td class="ms-status complete">&#x2705; Complete &#8212; 10 AM ET</td></tr>
-<tr><td class="ms-target">Sept 18&#8211;25</td><td>Complete West application stack</td><td class="ms-status progress">&#x1F7E1; Next major workstream</td></tr>
-<tr><td class="ms-target">Sept 25</td><td>West stack technically complete</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Sept 17</td><td>Old database stopped / rollback window begins</td><td class="ms-status complete">&#x2705; Complete</td></tr>
+<tr><td class="ms-target">Sept 18&#8211;25</td><td>Complete West application stack + recovery layer</td><td class="ms-status progress">&#x1F7E1; In Progress</td></tr>
+<tr><td class="ms-target">Sept 23</td><td>Old database formally decommissioned</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
 <tr><td class="ms-target">Sept 26&#8211;Oct 2</td><td>Application integration + database connectivity validation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
 <tr><td class="ms-target">Oct 2&#8211;6</td><td>End-to-end testing, performance &amp; remediation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
 <tr><td class="ms-target">Oct 6&#8211;7</td><td>Final readiness / operational validation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
-<tr><td class="ms-target">Oct 8</td><td>Final smoke test + handoff preparation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
 <tr><td class="ms-target">Oct 9</td><td>Full project handoff</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
 </tbody>
 </table>
-<div class="current-position"><strong>Current position:</strong> The West database attach and old-database stop both completed on schedule with no impact to production. The critical path now shifts to completing and validating the West application stack.</div>
-<div class="key-sequence"><strong>Key sequence:</strong> Database region attach (done) &#8594; old database stop (done) &#8594; West app stack &#8594; integration &#8594; validation &#8594; remediation &#8594; final readiness &#8594; Oct 9 handoff</div>
+<div class="current-position"><strong>Current position:</strong> The West database attach and old-database stop both completed on schedule with no impact to production. The team is now building out the recovery layer (backups and failover checks) and running out the old database&#8217;s one-week decommission window, while also completing the West application stack. A nice-to-have integration item was explicitly deferred to protect the Oct 9 date.</div>
+<div class="key-sequence"><strong>Key sequence:</strong> Database region attach (done) &#8594; old database stop (done) &#8594; recovery layer + old-database retirement (through Sept 23) &#8594; West app stack &#8594; integration &amp; validation &#8594; final readiness &#8594; Oct 9 handoff.</div>
 <div class="blockers">
 <div class="blockers-label">Blockers</div>
-<ul><li>No material blockers right now &#8212; the schedule to Oct 9 is tight, so any slip in an upcoming step would require rebasing the remaining dates.</li></ul>
+<ul>
+<li>Ownership of network routing and security-group changes during a disaster-recovery event hasn&#8217;t been assigned on the client side; this is being raised directly with the client rather than escalated as a program risk yet.</li>
+<li>Which database (East or West) the new application cluster is actively pointing to still needs confirmation ahead of the application-stack cutover.</li>
+</ul>
 </div>
 </div>
 
@@ -133,27 +142,28 @@ footer { margin-top:8px; padding-top:16px; border-top:1px solid var(--line); dis
 <table class="ms-table">
 <thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead>
 <tbody>
-<tr><td class="ms-target">Sept 9</td><td>Production release &amp; rollback</td><td class="ms-status complete">&#x2705; Complete (rolled back)</td></tr>
-<tr><td class="ms-target">Week of Sept 17</td><td>Internal root-cause review</td><td class="ms-status progress">&#x1F7E1; In Progress</td></tr>
-<tr><td class="ms-target">TBD</td><td>Retest &amp; new release date</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
-<tr><td class="ms-target">Nov 30 (tentative)</td><td>Lightning Bolt production release</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Sept 9</td><td>Lightning Bolt Phase 2 production release deployed</td><td class="ms-status complete">&#x2705; Complete</td></tr>
+<tr><td class="ms-target">Sept 9</td><td>Release rolled back same day after production issues</td><td class="ms-status complete">&#x2705; Complete</td></tr>
+<tr><td class="ms-target">TBD</td><td>Root-cause review of the rollback</td><td class="ms-status progress">&#x1F7E1; In Progress</td></tr>
+<tr><td class="ms-target">TBD</td><td>Retest and re-release plan confirmed</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
+<tr><td class="ms-target">Nov 30</td><td>Lightning Bolt production release</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
 </tbody>
 </table>
-<div class="current-position"><strong>Current position:</strong> A software update was rolled back after a login problem reached production. The team is completing a root-cause review before scheduling a retest; the separate November release remains unaffected.</div>
-<div class="key-sequence"><strong>Key sequence:</strong> Release &amp; rollback (done) &#8594; root-cause review &#8594; retest &amp; new date &#8594; Lightning Bolt release (Nov 30, tentative)</div>
+<div class="current-position"><strong>Current position:</strong> The Sept 9 production release was rolled back the same day after issues surfaced; a root-cause review was scheduled but no meeting has yet reported its outcome, so this stays flagged until a resolution and retest date are confirmed. The separate November 30 production-release target continues to be assessed as unaffected.</div>
+<div class="key-sequence"><strong>Key sequence:</strong> Phase 2 release (Sept 9, done) &#8594; rollback (Sept 9, done) &#8594; root-cause review (pending outcome) &#8594; retest / re-release (TBD) &#8594; Lightning Bolt production release (Nov 30 target).</div>
 <div class="blockers">
 <div class="blockers-label">Blockers</div>
-<ul><li>There&#8217;s no lower-environment sandbox that fully mirrors production, which is why this issue wasn&#8217;t caught before release &#8212; the review will confirm the retest plan.</li></ul>
-</div>
-<div class="ask">
-<div class="ask-label">Ask for leadership</div>
-<div class="ask-text">Approve investment in a proper pre-release testing environment so future updates can be validated before reaching customers, to help prevent repeat incidents like this one.</div>
+<ul>
+<li>Outcome of the rollback root-cause review hasn&#8217;t been reported yet &#8212; no confirmed cause or re-release plan.</li>
+<li>A contractor team&#8217;s development/QA environment access expires Sept 21; a renewal request is in progress but not yet confirmed landed.</li>
+<li>A related pipeline-tooling migration that would smooth future releases remains roughly two sprints out on the platform team&#8217;s backlog.</li>
+</ul>
 </div>
 </div>
 
 <footer>
 <span class="summary-chip">2 on track &#183; 2 need help</span>
-<span class="summary-chip">PerfectServe Executive Summary &#183; Sep 17, 2026</span>
+<span class="summary-chip">PerfectServe Executive Summary &#183; Sep 18, 2026</span>
 </footer>
 </div>
 </body>

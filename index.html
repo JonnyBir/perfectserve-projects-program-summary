@@ -80,7 +80,7 @@ footer { margin-top:8px; padding-top:16px; border-top:1px solid var(--line); dis
 <thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead>
 <tbody>
 <tr><td class="ms-target">Sept 14&#8211;18</td><td>Clear Phase 1 blockers + deploy core application services</td><td class="ms-status complete">&#x2705; Largely complete</td></tr>
-<tr><td class="ms-target">Sept 21</td><td>Environment available for Implementation</td><td class="ms-status progress">&#x1F7E1; Finishing access</td></tr>
+<tr><td class="ms-target">Sept 21</td><td>Environment available for Implementation</td><td class="ms-status complete">&#x2705; Complete</td></tr>
 <tr><td class="ms-target">Sept 21&#8211;Oct 2</td><td>Complete remaining integrations + supporting services (logging, monitoring, reporting)</td><td class="ms-status progress">&#x1F7E1; In Progress</td></tr>
 <tr><td class="ms-target">Oct 2&#8211;6</td><td>End-to-end integration testing + remediation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
 <tr><td class="ms-target">Oct 5&#8211;9</td><td>Production validation + final readiness checks</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
@@ -88,7 +88,7 @@ footer { margin-top:8px; padding-top:16px; border-top:1px solid var(--line); dis
 </tbody>
 </table>
 <div class="current-position"><strong>Current position:</strong> Core application services are live (Mailgunner and Iris confirmed; Minerva pending) and the earlier storage/search and database-pooling blockers are resolved. Remaining scope is last-mile: monitoring and logging hookup, reporting (Looker) setup, a few access tickets, and documentation. The team reaffirmed it can finish in 1&#8211;1.5 weeks, consistent with <strong>Oct 9</strong>.</div>
-<div class="key-sequence"><strong>Key sequence:</strong> Core platform (done) &#8594; Phase 1 blockers + core app services (done) &#8594; access tickets &#8594; logging/monitoring/reporting &#8594; E2E testing &#8594; production validation &#8594; Oct 9 full handoff.</div>
+<div class="key-sequence"><strong>Key sequence:</strong> Core platform (done) &#8594; Phase 1 blockers + core app services (done) &#8594; environment available for Implementation (done) &#8594; access tickets &#8594; logging/monitoring/reporting &#8594; E2E testing &#8594; production validation &#8594; Oct 9 full handoff.</div>
 <div class="blockers">
 <div class="blockers-label">Blockers</div>
 <ul><li>Monitoring (New Relic) is waiting on an alerting-tool (Rootly) ID from the client &#8212; escalated by both David and Jon.</li><li>Log-shipping (Logs.io) configuration isn&#8217;t deploying through the release pipeline (Argo CD); a new fix is being tested.</li><li>Two access requests are still open &#8212; an Okta certificate and a monitoring destination ID &#8212; both being actively escalated.</li></ul>

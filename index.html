@@ -6,150 +6,148 @@
 <title>PerfectServe Program &#183; Executive Summary &#183; 2026-09-28</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
-:root { --green-fg:#16a34a; --green-bg:#f0fdf4; --red-fg:#dc2626; --red-bg:#fef2f2; --amber-fg:#b45309; --amber-bg:#fef9f0; --ink:#111827; --sub:#6b7280; --line:#e2e4ea; }
-body { background:#f4f5f7; color:var(--ink); font-family:'Segoe UI',system-ui,-apple-system,sans-serif; font-size:15px; line-height:1.55; padding:40px 24px; }
-.wrap { max-width:900px; margin:0 auto; }
-header { margin-bottom:28px; }
-h1 { font-size:1.6rem; font-weight:700; letter-spacing:-0.01em; }
-.subtitle { font-size:0.95rem; color:var(--sub); margin-top:6px; }
-.proj-section { background:#fff; border:1px solid var(--line); border-radius:12px; padding:24px 28px; margin-bottom:20px; }
-.proj-section.attention { border-color:#f3c6c6; }
-.status-row { display:flex; align-items:center; gap:8px; margin-bottom:4px; }
-.dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
-.dot-green { background:var(--green-fg); }
-.dot-red { background:var(--red-fg); }
-.status-label { font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; }
-.status-label.green { color:var(--green-fg); }
-.status-label.red { color:var(--red-fg); }
-.proj-name { font-size:1.25rem; font-weight:700; margin:4px 0 14px; }
-.ms-table { width:100%; border-collapse:collapse; font-size:0.85rem; margin-bottom:16px; }
-.ms-table th { text-align:left; font-size:0.66rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--sub); padding:0 10px 6px 0; border-bottom:1px solid var(--line); }
-.ms-table td { padding:9px 10px 9px 0; border-bottom:1px solid #f1f3f7; vertical-align:top; }
-.ms-target { font-weight:700; white-space:nowrap; color:#374151; }
-.ms-status { white-space:nowrap; font-weight:600; }
-.ms-status.complete { color:var(--green-fg); }
-.ms-status.progress { color:var(--amber-fg); }
-.ms-status.target { color:var(--sub); }
-.current-position { font-size:0.9rem; color:#374151; margin-bottom:10px; }
+:root { --green:#16a34a; --green-bg:#ecfdf3; --amber:#d97706; --amber-bg:#fffbeb; --red:#dc2626; --red-bg:#fef2f2;
+  --ink:#0f172a; --sub:#64748b; --line:#e5e7eb; --navy:#0b1f3a; --blue:#2563eb; }
+body { background:#eef1f6; color:var(--ink); font-family:'Segoe UI',system-ui,-apple-system,sans-serif; font-size:15px; line-height:1.55; padding:32px 20px 48px; }
+.wrap { max-width:960px; margin:0 auto; }
+.hero { background:linear-gradient(135deg,#0b1f3a 0%,#16325c 60%,#1e4b8f 100%); color:#fff; border-radius:16px; padding:28px 32px; margin-bottom:22px; box-shadow:0 10px 30px rgba(11,31,58,.18); }
+.hero-top { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap; }
+.eyebrow { font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#93c5fd; }
+h1 { font-size:1.7rem; font-weight:700; letter-spacing:-.01em; margin-top:4px; }
+.asof { font-size:.9rem; color:#cbd5e1; margin-top:4px; }
+.kpis { display:flex; gap:10px; flex-wrap:wrap; }
+.kpi { background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:12px; padding:10px 16px; min-width:110px; }
+.kpi-num { font-size:1.5rem; font-weight:700; line-height:1.1; }
+.kpi-lbl { font-size:.7rem; text-transform:uppercase; letter-spacing:.08em; color:#cbd5e1; }
+.overview { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:22px; }
+.ov { background:rgba(255,255,255,.08); border-radius:10px; padding:12px 14px; text-decoration:none; color:#fff; display:block; border-top:3px solid transparent; }
+.ov.g { border-top-color:#4ade80; } .ov.y { border-top-color:#fbbf24; } .ov.r { border-top-color:#f87171; }
+.ov-name { font-size:.85rem; font-weight:600; }
+.ov-next { font-size:.75rem; color:#cbd5e1; margin-top:2px; }
+.ov-bar { height:5px; background:rgba(255,255,255,.15); border-radius:3px; margin-top:8px; overflow:hidden; }
+.ov-bar span { display:block; height:100%; background:#93c5fd; border-radius:3px; }
+.ov-pct { font-size:.72rem; color:#cbd5e1; margin-top:4px; }
+@media (max-width:760px){ .overview{ grid-template-columns:repeat(2,1fr);} }
+.proj-section { background:#fff; border:1px solid var(--line); border-left:6px solid var(--green); border-radius:14px; padding:24px 28px; margin-bottom:18px; box-shadow:0 2px 10px rgba(15,23,42,.05); }
+.proj-section.yellow { border-left-color:var(--amber); }
+.proj-section.red { border-left-color:var(--red); }
+.proj-head { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:14px; }
+.proj-name { font-size:1.3rem; font-weight:700; }
+.pill { display:inline-flex; align-items:center; gap:6px; font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; padding:5px 11px; border-radius:999px; }
+.pill .dot { width:8px; height:8px; border-radius:50%; background:currentColor; }
+.pill.green { color:var(--green); background:var(--green-bg); }
+.pill.yellow { color:var(--amber); background:var(--amber-bg); }
+.pill.red { color:var(--red); background:var(--red-bg); }
+.progress { display:flex; align-items:center; gap:12px; margin-bottom:18px; }
+.progress-track { flex:1; height:8px; background:#eef2f7; border-radius:4px; overflow:hidden; }
+.progress-fill { height:100%; border-radius:4px; background:linear-gradient(90deg,#2563eb,#60a5fa); }
+.progress-lbl { font-size:.8rem; font-weight:700; color:#334155; white-space:nowrap; }
+.ms-table { width:100%; border-collapse:separate; border-spacing:0; font-size:.86rem; margin-bottom:18px; border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+.ms-table th { text-align:left; font-size:.66rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--sub); background:#f8fafc; padding:9px 12px; border-bottom:1px solid var(--line); }
+.ms-table td { padding:10px 12px; border-bottom:1px solid #f1f5f9; vertical-align:top; }
+.ms-table tr:last-child td { border-bottom:none; }
+.ms-table tr.done td { color:#475569; }
+.ms-target { font-weight:700; white-space:nowrap; color:#334155; width:1%; }
+.ms-status { white-space:nowrap; width:1%; }
+.tag { display:inline-block; font-size:.74rem; font-weight:600; padding:3px 9px; border-radius:6px; }
+.tag.complete { color:var(--green); background:var(--green-bg); }
+.tag.progress { color:var(--amber); background:var(--amber-bg); }
+.tag.target { color:#475569; background:#f1f5f9; }
+.current-position { font-size:.92rem; color:#334155; margin-bottom:12px; }
 .current-position strong { color:var(--ink); }
-.key-sequence { font-size:0.82rem; color:var(--sub); font-style:italic; margin-bottom:16px; }
-.blockers { background:var(--amber-bg); border-radius:8px; padding:12px 14px; margin-bottom:12px; }
-.blockers-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--amber-fg); margin-bottom:6px; }
+.key-sequence { font-size:.82rem; color:#475569; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:8px; padding:9px 12px; margin-bottom:14px; }
+.key-sequence strong { color:var(--ink); font-style:normal; }
+.cols { display:grid; grid-template-columns:1fr; gap:12px; }
+.cols.two { grid-template-columns:1.6fr 1fr; }
+@media (max-width:760px){ .cols.two{ grid-template-columns:1fr; } }
+.blockers { background:var(--amber-bg); border:1px solid #fde68a; border-radius:10px; padding:12px 14px; }
+.box-label { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; margin-bottom:6px; }
+.blockers .box-label { color:#b45309; }
 .blockers ul { margin:0; padding-left:18px; }
-.blockers li { font-size:0.85rem; color:#374151; margin-bottom:4px; }
-.ask { background:var(--red-bg); border-radius:8px; padding:12px 14px; }
-.ask-label { font-size:0.7rem; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:var(--red-fg); margin-bottom:4px; }
-.ask-text { font-size:0.9rem; color:#374151; }
-footer { margin-top:8px; padding-top:16px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; font-size:0.8rem; color:var(--sub); }
-.summary-chip { font-size:0.8rem; color:var(--sub); }
+.blockers li { font-size:.85rem; color:#374151; margin-bottom:4px; }
+.ask { background:var(--red-bg); border:1px solid #fecaca; border-radius:10px; padding:12px 14px; }
+.ask .box-label { color:var(--red); }
+.ask-text { font-size:.88rem; color:#374151; font-weight:500; }
+footer { margin-top:10px; padding-top:16px; border-top:1px solid #d7dce5; display:flex; justify-content:space-between; font-size:.8rem; color:var(--sub); flex-wrap:wrap; gap:8px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-<header>
-<h1>PerfectServe Program &#8212; Executive Summary</h1>
-<div class="subtitle">Status as of September 28, 2026</div>
-</header>
-
-<div class="proj-section">
-<div class="status-row"><span class="dot dot-green"></span><span class="status-label green">On track</span></div>
-<div class="proj-name">Atlanta move to AWS</div>
-<table class="ms-table">
-<thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead>
-<tbody>
-<tr><td class="ms-target">Complete</td><td>Wave 1 migration (applications)</td><td class="ms-status complete">&#x2705; Complete</td></tr>
-<tr><td class="ms-target">Complete</td><td>Wave 2 migration (applications)</td><td class="ms-status complete">&#x2705; Complete</td></tr>
-<tr><td class="ms-target">Sept 23</td><td>QA environment moved to AWS</td><td class="ms-status complete">&#x2705; Complete</td></tr>
-<tr><td class="ms-target">Sept 23&#8211;30</td><td>QA re-validation for Wave 3 &#8212; functional and performance sign-offs</td><td class="ms-status progress">&#x1F7E1; In Progress</td></tr>
-<tr><td class="ms-target">Oct 7</td><td>Wave 3 migration &#8212; applications (list agreed)</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
-<tr><td class="ms-target">Nov 4</td><td>Wave 4 migration &#8212; applications (list agreed)</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
-<tr><td class="ms-target">Dec 2</td><td>Wave 5 migration &#8212; databases</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
-</tbody>
-</table>
+<div class="hero">
+<div class="hero-top">
+<div><div class="eyebrow">PerfectServe &#183; AWS Program</div><h1>Executive Summary</h1><div class="asof">Status as of September 28, 2026</div></div>
+<div class="kpis">
+<div class="kpi"><div class="kpi-num">2</div><div class="kpi-lbl">On track</div></div>
+<div class="kpi"><div class="kpi-num">2</div><div class="kpi-lbl">Need attention</div></div>
+<div class="kpi"><div class="kpi-num">Oct 7</div><div class="kpi-lbl">Next go-live</div></div>
+</div>
+</div>
+<div class="overview"><a class="ov g" href="#atlanta"><div class="ov-name">Atlanta move to AWS</div><div class="ov-next">Wave 3 go-live &#183; Oct 7</div><div class="ov-bar"><span style="width:80%"></span></div><div class="ov-pct">80% complete &#183; On track</div></a><a class="ov g" href="#canada"><div class="ov-name">Canada platform build</div><div class="ov-next">Full handoff &#183; Oct 9</div><div class="ov-bar"><span style="width:90%"></span></div><div class="ov-pct">90% complete &#183; On track</div></a><a class="ov y" href="#ocwest"><div class="ov-name">OC West expansion</div><div class="ov-next">Full handoff &#183; Oct 15</div><div class="ov-bar"><span style="width:75%"></span></div><div class="ov-pct">75% complete &#183; Needs attention</div></a><a class="ov r" href="#idp"><div class="ov-name">Identity platform upgrade</div><div class="ov-next">Lightning Bolt &#183; Nov 30 (TBC)</div><div class="ov-bar"><span style="width:80%"></span></div><div class="ov-pct">80% complete &#183; Needs attention</div></a></div>
+</div>
+<div class="proj-section green" id="atlanta">
+<div class="proj-head"><div class="proj-name">Atlanta move to AWS</div><span class="pill green"><span class="dot"></span>On track</span></div>
+<div class="progress"><div class="progress-track"><div class="progress-fill" style="width:80%"></div></div><div class="progress-lbl">80% complete</div></div>
+<table class="ms-table"><thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead><tbody>
+<tr class="done"><td class="ms-target">Complete</td><td>Wave 1 migration (applications)</td><td class="ms-status"><span class="tag complete">&#x2705; Complete</span></td></tr>
+<tr class="done"><td class="ms-target">Complete</td><td>Wave 2 migration (applications)</td><td class="ms-status"><span class="tag complete">&#x2705; Complete</span></td></tr>
+<tr class="done"><td class="ms-target">Sept 23</td><td>QA environment moved to AWS</td><td class="ms-status"><span class="tag complete">&#x2705; Complete</span></td></tr>
+<tr><td class="ms-target">Sept 23&#8211;30</td><td>QA re-validation for Wave 3 &#8212; functional and performance sign-offs</td><td class="ms-status"><span class="tag progress">&#x1F7E1; In Progress</span></td></tr>
+<tr><td class="ms-target">Oct 7</td><td>Wave 3 migration &#8212; applications (list agreed)</td><td class="ms-status"><span class="tag target">&#x1F3AF; Target</span></td></tr>
+<tr><td class="ms-target">Nov 4</td><td>Wave 4 migration &#8212; applications (list agreed)</td><td class="ms-status"><span class="tag target">&#x1F3AF; Target</span></td></tr>
+<tr><td class="ms-target">Dec 2</td><td>Wave 5 migration &#8212; databases</td><td class="ms-status"><span class="tag target">&#x1F3AF; Target</span></td></tr>
+</tbody></table>
 <div class="current-position"><strong>Current position:</strong> Waves 1 and 2 are complete and the QA environment is now running in AWS. Formal functional and performance sign-offs for Wave 3 are due <strong>Sept 30</strong>, a week ahead of the <strong>Oct 7</strong> go-live. A planned directory-services (AD) change was deliberately moved to the Nov 4 cycle to avoid late changes before Oct 7.</div>
-<div class="key-sequence"><strong>Key sequence:</strong> Wave 1 (done) &#8594; Wave 2 (done) &#8594; QA environment in AWS (done) &#8594; QA sign-offs (Sept 30) &#8594; Wave 3 go-live (Oct 7, apps) &#8594; Wave 4 go-live (Nov 4, apps) &#8594; Wave 5 go-live (Dec 2, databases).</div>
-<div class="blockers">
-<div class="blockers-label">Blockers</div>
-<ul><li>Functional and performance sign-offs both due Sept 30 &#8212; the remaining gate before the Oct 7 go-live.</li><li>One application update (Call Forms) needs change-approval board (CAB) sign-off next Thursday before it can deploy; two desktop app installers are missing from the virtual-desktop catalog while the root cause is confirmed.</li></ul>
+<div class="key-sequence"><strong>Key sequence:</strong> Wave 1 (done) &#8594; Wave 2 (done) &#8594; QA environment in AWS (done) &#8594; QA sign-offs (Sept 30) &#8594; Wave 3 go-live (Oct 7, apps) &#8594; Wave 4 go-live (Nov 4, apps) &#8594; Wave 5 go-live (Dec 2, databases)</div>
+<div class="cols"><div class="blockers"><div class="box-label">Blockers</div><ul><li>Functional and performance sign-offs both due Sept 30 &#8212; the remaining gate before the Oct 7 go-live.</li><li>One application update (Call Forms) needs change-approval board (CAB) sign-off next Thursday; two desktop app installers are missing from the virtual-desktop catalog while the root cause is confirmed.</li></ul></div></div>
 </div>
-</div>
-<div class="proj-section">
-<div class="status-row"><span class="dot dot-green"></span><span class="status-label green">On track</span></div>
-<div class="proj-name">Canada platform build</div>
-<table class="ms-table">
-<thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead>
-<tbody>
-<tr><td class="ms-target">Sept 14&#8211;18</td><td>Clear Phase 1 blockers + deploy core application services</td><td class="ms-status complete">&#x2705; Largely complete</td></tr>
-<tr><td class="ms-target">Sept 21</td><td>Environment available for Implementation</td><td class="ms-status complete">&#x2705; Complete</td></tr>
-<tr><td class="ms-target">Sept 21&#8211;Oct 2</td><td>Complete remaining integrations + supporting services (logging, monitoring, reporting)</td><td class="ms-status progress">&#x1F7E1; In Progress</td></tr>
-<tr><td class="ms-target">Oct 2&#8211;6</td><td>End-to-end integration testing + remediation</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
-<tr><td class="ms-target">Oct 5&#8211;9</td><td>Production validation + final readiness checks</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
-<tr><td class="ms-target">Oct 9</td><td>Customer production-ready / full handoff</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
-</tbody>
-</table>
+<div class="proj-section green" id="canada">
+<div class="proj-head"><div class="proj-name">Canada platform build</div><span class="pill green"><span class="dot"></span>On track</span></div>
+<div class="progress"><div class="progress-track"><div class="progress-fill" style="width:90%"></div></div><div class="progress-lbl">90% complete</div></div>
+<table class="ms-table"><thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead><tbody>
+<tr class="done"><td class="ms-target">Sept 14&#8211;18</td><td>Clear Phase 1 blockers + deploy core application services</td><td class="ms-status"><span class="tag complete">&#x2705; Largely complete</span></td></tr>
+<tr class="done"><td class="ms-target">Sept 21</td><td>Environment available for Implementation</td><td class="ms-status"><span class="tag complete">&#x2705; Complete</span></td></tr>
+<tr><td class="ms-target">Sept 21&#8211;Oct 2</td><td>Complete remaining integrations + supporting services (logging, monitoring, reporting)</td><td class="ms-status"><span class="tag progress">&#x1F7E1; In Progress</span></td></tr>
+<tr><td class="ms-target">Oct 2&#8211;6</td><td>End-to-end integration testing + remediation</td><td class="ms-status"><span class="tag target">&#x1F3AF; Target</span></td></tr>
+<tr><td class="ms-target">Oct 5&#8211;9</td><td>Production validation + final readiness checks</td><td class="ms-status"><span class="tag target">&#x1F3AF; Target</span></td></tr>
+<tr><td class="ms-target">Oct 9</td><td>Customer production-ready / full handoff</td><td class="ms-status"><span class="tag target">&#x1F3AF; Target</span></td></tr>
+</tbody></table>
 <div class="current-position"><strong>Current position:</strong> Core application services are live (Mailgunner and Iris confirmed; Minerva pending) and the earlier storage/search and database-pooling blockers are resolved. Remaining scope is last-mile: monitoring and logging hookup, reporting (Looker) setup, a few access tickets, and documentation. The team reaffirmed it can finish in 1&#8211;1.5 weeks, consistent with <strong>Oct 9</strong>.</div>
-<div class="key-sequence"><strong>Key sequence:</strong> Core platform (done) &#8594; Phase 1 blockers + core app services (done) &#8594; environment available for Implementation (done) &#8594; access tickets &#8594; logging/monitoring/reporting &#8594; E2E testing &#8594; production validation &#8594; Oct 9 full handoff.</div>
-<div class="blockers">
-<div class="blockers-label">Blockers</div>
-<ul><li>Monitoring (New Relic) is waiting on an alerting-tool (Rootly) ID from the client &#8212; escalated by both David and Jon.</li><li>Log-shipping (Logs.io) configuration isn&#8217;t deploying through the release pipeline (Argo CD); a new fix is being tested.</li><li>Two access requests are still open &#8212; an Okta certificate and a monitoring destination ID &#8212; both being actively escalated.</li></ul>
+<div class="key-sequence"><strong>Key sequence:</strong> Core platform (done) &#8594; Phase 1 blockers + core app services (done) &#8594; environment available for Implementation (done) &#8594; access tickets &#8594; logging/monitoring/reporting &#8594; E2E testing &#8594; production validation &#8594; Oct 9 full handoff</div>
+<div class="cols"><div class="blockers"><div class="box-label">Blockers</div><ul><li>Monitoring (New Relic) is waiting on an alerting-tool (Rootly) ID from the client &#8212; escalated by both David and Jon.</li><li>Log-shipping (Logs.io) configuration isn&#8217;t deploying through the release pipeline (Argo CD); a new fix is being tested.</li><li>Two access requests are still open &#8212; an Okta certificate and a monitoring destination ID &#8212; both being actively escalated.</li></ul></div></div>
 </div>
-</div>
-<div class="proj-section attention">
-<div class="status-row"><span class="dot dot-red"></span><span class="status-label red">Needs attention</span></div>
-<div class="proj-name">OC West expansion</div>
-<table class="ms-table">
-<thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead>
-<tbody>
-<tr><td class="ms-target">Sept 16</td><td>West database region attached</td><td class="ms-status complete">&#x2705; Complete</td></tr>
-<tr><td class="ms-target">Sept 17</td><td>Old database stopped / rollback window begins</td><td class="ms-status complete">&#x2705; Complete &#8212; 10 AM ET</td></tr>
-<tr><td class="ms-target">Sept 24</td><td>Phased plan agreed with client (deploy current app to West now; code changes follow)</td><td class="ms-status complete">&#x2705; Complete</td></tr>
-<tr><td class="ms-target">Sept 18&#8211;Oct</td><td>Current application live in West for Implementation-team access</td><td class="ms-status progress">&#x1F7E1; In Progress &#8212; awaiting access</td></tr>
-<tr><td class="ms-target">Oct</td><td>Integration, West staging-cluster QA, E2E testing &amp; remediation (dates being rebased to Oct 15)</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
-<tr><td class="ms-target">Oct 14</td><td>Global database writer-endpoint deployment (tentative maintenance window)</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
-<tr><td class="ms-target">Oct 15</td><td>Release 14 code changes (database routing, session pinning) + full project handoff</td><td class="ms-status target">&#x1F3AF; Target &#8212; was Oct 9</td></tr>
-</tbody>
-</table>
+<div class="proj-section yellow" id="ocwest">
+<div class="proj-head"><div class="proj-name">OC West expansion</div><span class="pill yellow"><span class="dot"></span>Needs attention</span></div>
+<div class="progress"><div class="progress-track"><div class="progress-fill" style="width:75%"></div></div><div class="progress-lbl">75% complete</div></div>
+<table class="ms-table"><thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead><tbody>
+<tr class="done"><td class="ms-target">Sept 16</td><td>West database region attached</td><td class="ms-status"><span class="tag complete">&#x2705; Complete</span></td></tr>
+<tr class="done"><td class="ms-target">Sept 17</td><td>Old database stopped / rollback window begins</td><td class="ms-status"><span class="tag complete">&#x2705; Complete &#8212; 10 AM ET</span></td></tr>
+<tr class="done"><td class="ms-target">Sept 24</td><td>Phased plan agreed with client (deploy current app to West now; code changes follow)</td><td class="ms-status"><span class="tag complete">&#x2705; Complete</span></td></tr>
+<tr><td class="ms-target">Sept 18&#8211;Oct</td><td>Current application live in West for Implementation-team access</td><td class="ms-status"><span class="tag progress">&#x1F7E1; In Progress &#8212; awaiting access</span></td></tr>
+<tr><td class="ms-target">Oct</td><td>Integration, West staging-cluster QA, E2E testing &amp; remediation (dates being rebased to Oct 15)</td><td class="ms-status"><span class="tag target">&#x1F3AF; Target</span></td></tr>
+<tr><td class="ms-target">Oct 14</td><td>Global database writer-endpoint deployment (tentative maintenance window)</td><td class="ms-status"><span class="tag target">&#x1F3AF; Target</span></td></tr>
+<tr><td class="ms-target">Oct 15</td><td>Release 14 code changes (database routing, session pinning) + full project handoff</td><td class="ms-status"><span class="tag target">&#x1F3AF; Target &#8212; was Oct 9</span></td></tr>
+</tbody></table>
 <div class="current-position"><strong>Current position:</strong> Both database milestones landed clean, but full handoff has moved from Oct 9 to <strong>Oct 15</strong>: production-ready West traffic needs application code changes (database routing and session pinning) that ship in Release 14. A phased plan limits the impact &#8212; the current app goes into West now so the Implementation team can start work while the code changes proceed.</div>
-<div class="key-sequence"><strong>Key sequence:</strong> Database region attach (done) &#8594; old database stop (done) &#8594; phased plan agreed (done) &#8594; current app live in West &#8594; integration + staging QA &#8594; Oct 14 writer-endpoint change &#8594; Release 14 &#8594; Oct 15 handoff.</div>
-<div class="blockers">
-<div class="blockers-label">Blockers</div>
-<ul><li>Deployment to West is blocked until Miguel gets release-pipeline (Argo CD) access, and the client&#8217;s West stack has an incorrect cluster naming convention to fix.</li><li>A new West-region staging cluster is needed to catch database commands that won&#8217;t work with cross-region write forwarding before they reach production.</li><li>Disaster-recovery and cross-region routing &#8220;definition of done&#8221; still needs a dedicated scoping session.</li></ul>
+<div class="key-sequence"><strong>Key sequence:</strong> Database region attach (done) &#8594; old database stop (done) &#8594; phased plan agreed (done) &#8594; current app live in West &#8594; integration + staging QA &#8594; Oct 14 writer-endpoint change &#8594; Release 14 &#8594; Oct 15 handoff</div>
+<div class="cols two"><div class="blockers"><div class="box-label">Blockers</div><ul><li>Deployment to West is blocked until Miguel gets release-pipeline (Argo CD) access, and the client&#8217;s West stack has an incorrect cluster naming convention to fix.</li><li>A new West-region staging cluster is needed to catch database commands that won&#8217;t work with cross-region write forwarding before they reach production.</li><li>Disaster-recovery and cross-region routing &#8220;definition of done&#8221; still needs a dedicated scoping session.</li></ul></div><div class="ask"><div class="box-label">Ask for leadership</div><div class="ask-text">Help escalate release-pipeline (Argo CD) access for Miguel with the client so the West deployment can proceed and protect the revised Oct 15 date.</div></div></div>
 </div>
-<div class="ask">
-<div class="ask-label">Ask for leadership</div>
-<div class="ask-text">Help escalate release-pipeline (Argo CD) access for Miguel with the client so the West deployment can proceed and protect the revised Oct 15 date.</div>
-</div>
-</div>
-<div class="proj-section attention">
-<div class="status-row"><span class="dot dot-red"></span><span class="status-label red">Needs attention</span></div>
-<div class="proj-name">Identity platform upgrade</div>
-<table class="ms-table">
-<thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead>
-<tbody>
-<tr><td class="ms-target">Sept 9</td><td>Phase 2 production release attempted &#8212; rolled back same day (Okta issues)</td><td class="ms-status complete">&#x2705; Complete</td></tr>
-<tr><td class="ms-target">Sept 23</td><td>Internal sync: rollback-safety plan agreed</td><td class="ms-status complete">&#x2705; Complete</td></tr>
-<tr><td class="ms-target">Sept 28</td><td>Rollback-safety fix delivered (token grace period so a rollback no longer logs users out)</td><td class="ms-status complete">&#x2705; Complete</td></tr>
-<tr><td class="ms-target">Week of Sept 28</td><td>Relaunch planning &#8212; review new issues found in rollback logs</td><td class="ms-status progress">&#x1F7E1; Being scheduled</td></tr>
-<tr><td class="ms-target">TBD</td><td>Technical deployment-process sync + client planning meeting to commit a release date</td><td class="ms-status target">&#x1F3AF; Target</td></tr>
-<tr><td class="ms-target">Nov 30</td><td>Lightning Bolt production release</td><td class="ms-status target">&#x1F3AF; Target &#8212; no firm date</td></tr>
-</tbody>
-</table>
+<div class="proj-section red" id="idp">
+<div class="proj-head"><div class="proj-name">Identity platform upgrade</div><span class="pill red"><span class="dot"></span>Needs attention</span></div>
+<div class="progress"><div class="progress-track"><div class="progress-fill" style="width:80%"></div></div><div class="progress-lbl">80% complete</div></div>
+<table class="ms-table"><thead><tr><th>Target</th><th>Milestone</th><th>Status</th></tr></thead><tbody>
+<tr class="done"><td class="ms-target">Sept 9</td><td>Phase 2 production release attempted &#8212; rolled back same day (Okta issues)</td><td class="ms-status"><span class="tag complete">&#x2705; Complete</span></td></tr>
+<tr class="done"><td class="ms-target">Sept 23</td><td>Internal sync: rollback-safety plan agreed</td><td class="ms-status"><span class="tag complete">&#x2705; Complete</span></td></tr>
+<tr class="done"><td class="ms-target">Sept 28</td><td>Rollback-safety fix delivered (token grace period so a rollback no longer logs users out)</td><td class="ms-status"><span class="tag complete">&#x2705; Complete</span></td></tr>
+<tr><td class="ms-target">Week of Sept 28</td><td>Relaunch planning &#8212; review new issues found in rollback logs</td><td class="ms-status"><span class="tag progress">&#x1F7E1; Being scheduled</span></td></tr>
+<tr><td class="ms-target">TBD</td><td>Technical deployment-process sync + client planning meeting to commit a release date</td><td class="ms-status"><span class="tag target">&#x1F3AF; Target</span></td></tr>
+<tr><td class="ms-target">Nov 30</td><td>Lightning Bolt production release</td><td class="ms-status"><span class="tag target">&#x1F3AF; Target &#8212; no firm date</span></td></tr>
+</tbody></table>
 <div class="current-position"><strong>Current position:</strong> The Sept 9 release was rolled back after Okta issues appeared in production. The main rollback-safety fix has been delivered, and a relaunch-planning meeting is being scheduled this week to review newly found issues and set the next release timeline. <strong>No committed release date exists yet.</strong></div>
-<div class="key-sequence"><strong>Key sequence:</strong> Release + rollback (done) &#8594; rollback-safety plan (done) &#8594; safety fix (done) &#8594; relaunch planning (this week) &#8594; deployment sync + client planning &#8594; Nov 30 Lightning Bolt release.</div>
-<div class="blockers">
-<div class="blockers-label">Blockers</div>
-<ul><li>No committed date for the next release attempt until the relaunch-planning meeting (Betsie, Doug, Mimi, Motomi) happens.</li><li>No lower (pre-production) environment exists to catch Okta issues before release, which is how the Sept 9 problem reached production.</li><li>Related CC/OC work is still left out of the Q3 plan pending a capacity trade-off decision.</li></ul>
-</div>
-<div class="ask">
-<div class="ask-label">Ask for leadership</div>
-<div class="ask-text">Help secure client time this week for the relaunch-planning meeting so a firm Lightning Bolt release date can be committed.</div>
-</div>
+<div class="key-sequence"><strong>Key sequence:</strong> Release + rollback (done) &#8594; rollback-safety plan (done) &#8594; safety fix (done) &#8594; relaunch planning (this week) &#8594; deployment sync + client planning &#8594; Nov 30 Lightning Bolt release</div>
+<div class="cols two"><div class="blockers"><div class="box-label">Blockers</div><ul><li>No committed date for the next release attempt until the relaunch-planning meeting (Betsie, Doug, Mimi, Motomi) happens.</li><li>No lower (pre-production) environment exists to catch Okta issues before release, which is how the Sept 9 problem reached production.</li><li>Related CC/OC work is still left out of the Q3 plan pending a capacity trade-off decision.</li></ul></div><div class="ask"><div class="box-label">Ask for leadership</div><div class="ask-text">Help secure client time this week for the relaunch-planning meeting so a firm Lightning Bolt release date can be committed.</div></div></div>
 </div>
 
-<footer>
-<span class="summary-chip">2 on track &#183; 2 need help</span>
-<span class="summary-chip">PerfectServe Executive Summary &#183; Sep 28, 2026</span>
-</footer>
+<footer><span>2 on track &#183; 2 need help</span><span>PerfectServe Executive Summary &#183; Sep 28, 2026</span></footer>
 </div>
 </body>
 </html>
